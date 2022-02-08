@@ -1,1 +1,1 @@
-./xanthe
+./xanthe_main
